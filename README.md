@@ -35,13 +35,11 @@ Example Commands
 ================
 ```
 CC1 Benchmark ( Victim Cache )
-
 ./sim-cache -cache:dl1 dl1:64:64:1:l -cache:il1 il1:64:64:1:l -cache:dl2 dl2:2048:64:4:l cache:dvictim dvictim:8:l -cache:ivictim ivictim:8:l /home/ubuntu/harsh/little_endian_binaries/Little/cc1.ss </home/ubuntu/harsh/benchmarks/1stmt.i>OUT
 
 CC1 Benchmark ( Miss Cache )
-
 ./sim-cache -cache:dl1 dl1:64:64:1:l -cache:il1 il1:64:64:1:l -cache:dl2 dl2:2048:64:4:l cache:dmcache dmcache:8:l -cache:imcache imcache:8:l /home/ubuntu/harsh/little_endian_binaries/Little/cc1.ss </home/ubuntu/harsh/benchmarks/1stmt.i>OUT
 
 CC1 Benchmark ( Selective Victim Cache )
-
 ./sim-cache -cache:dl1 dl1:64:64:1:l -cache:il1 il1:64:64:1:l -cache:dl2 dl2:2048:64:4:l cache:dsel dsel:8:l -cache:isel isel:8:l /home/ubuntu/harsh/little_endian_binaries/Little/cc1.ss </home/ubuntu/harsh/benchmarks/1stmt.i>OUT
+
