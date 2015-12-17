@@ -22,13 +22,17 @@ Use following commands
 ```
 ./sim-cache –cache<name> <option for cache> benchmark file <in file for benchmark>out file
 victim cache
-    -cache:dvictim dvictim:8:1 -cache:ivictim dvictim:8:1
+    -cache:dvictim dvictim:8:l -cache:ivictim dvictim:8:l <line size : replacement Strategy (l,f,r)>
 
 miss cache
-    -cache:dmcache dmcache:8:1 -cache:imcache dvictim:8:1
+    -cache:dmcache dmcache:8:l -cache:imcache dvictim:8:l <line size : replacement Strategy (l,f,r)>
 
 selective cache 
-    -cache:dsel dsel:8:1 -cache:isel dsel:8:1
+    -cache:dsel dsel:8:l -cache:isel dsel:8:l <line size : replacement Strategy (l,f,r)>
+    
+l = LRU Replacement Strategy
+f = FIFO Replacement Strategy
+r = Random Replacement Strategy
 ```
 
 Example Commands
