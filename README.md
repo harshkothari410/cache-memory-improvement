@@ -10,3 +10,32 @@ Build again and run
 make
 ./sim-cache
 ```
+
+Use following commands
+======================
+```
+./sim-cache –cache<name> <option for cache> benchmark file <in file for benchmark>out file
+victim cache
+    -cache:dvictim dvictim:8:1 -cache:ivictim dvictim:8:1
+
+miss cache
+    -cache:dmcache dmcache:8:1 -cache:imcache dvictim:8:1
+
+selective cache 
+    -cache:dsel dsel:8:1 -cache:isel dsel:8:1
+```
+
+Example Commands
+================
+```
+CC1 Benchmark ( Victim Cache )
+
+./sim-cache -cache:dl1 dl1:64:64:1:l -cache:il1 il1:64:64:1:l -cache:dl2 dl2:2048:64:4:l cache:dvictim dvictim:8:l -cache:ivictim ivictim:8:l /home/ubuntu/harsh/little_endian_binaries/Little/cc1.ss </home/ubuntu/harsh/benchmarks/1stmt.i>OUT
+
+CC1 Benchmark ( Miss Cache )
+
+./sim-cache -cache:dl1 dl1:64:64:1:l -cache:il1 il1:64:64:1:l -cache:dl2 dl2:2048:64:4:l cache:dmcache dmcache:8:l -cache:imcache imcache:8:l /home/ubuntu/harsh/little_endian_binaries/Little/cc1.ss </home/ubuntu/harsh/benchmarks/1stmt.i>OUT
+
+CC1 Benchmark ( Selective Victim Cache )
+
+./sim-cache -cache:dl1 dl1:64:64:1:l -cache:il1 il1:64:64:1:l -cache:dl2 dl2:2048:64:4:l cache:dsel dsel:8:l -cache:isel isel:8:l /home/ubuntu/harsh/little_endian_binaries/Little/cc1.ss </home/ubuntu/harsh/benchmarks/1stmt.i>OUT
