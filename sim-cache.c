@@ -156,6 +156,7 @@ dl1_access_fn(enum mem_cmd cmd,		/* access cmd, Read or Write */
 
   	md_addr_t *repl_addr = (md_addr_t *)malloc(sizeof(md_addr_t));
 
+    // Author : Harsh Kothari
   	if (selective_dl1){
   		if (cache_dl1->last_blk_addr != 0){
   			if (cache_probe(selective_dl1, baddr) != 0){
@@ -250,6 +251,7 @@ dl1_access_fn(enum mem_cmd cmd,		/* access cmd, Read or Write */
   		// }
   	}
 
+  // Author : Harsh Kothari
 	if (victim_dl1){
 
 		if (cache_dl1->last_blk_addr != 0){
@@ -278,6 +280,7 @@ dl1_access_fn(enum mem_cmd cmd,		/* access cmd, Read or Write */
 	}
 
     // miss cache
+  // Author : Harsh Kothari
 	if (miss_dl1){
 
 		if (cache_dl1->last_blk_addr != 0){
@@ -404,6 +407,7 @@ il1_access_fn(enum mem_cmd cmd,		/* access cmd, Read or Write */
 {
 	 	md_addr_t *repl_addr = (md_addr_t *)malloc(sizeof(md_addr_t));
 
+    // Author : Harsh Kothari
   	if (selective_il1){
   		if (cache_il1->last_blk_addr != 0){
   			if (cache_probe(selective_il1, baddr) != 0){
@@ -497,6 +501,7 @@ il1_access_fn(enum mem_cmd cmd,		/* access cmd, Read or Write */
   		// }
   	}
 
+  // Author : Harsh Kothari
 	if (victim_il1){
 
 		if (cache_il1->last_blk_addr != 0){
@@ -525,6 +530,7 @@ il1_access_fn(enum mem_cmd cmd,		/* access cmd, Read or Write */
 	}
 
     // miss cache
+  // Author : Harsh Kothari
 	if (miss_il1){
 
 		if (cache_il1->last_blk_addr != 0){
@@ -948,7 +954,7 @@ sim_check_options(struct opt_odb_t *odb,	/* options database */
 	    	if (sscanf(selective_il1_opt, "%[^:]:%d:%c",name, &nsets, &c) != 3 )
 	    		fatal("bad selective D-cache parms: "
 		  		"<name>:<lines>:<repl>");
-	            selective_il1 = cache_create(name, 2, bsize, /* balloc */FALSE,
+	            selective_il1 = cache_create(name, 1, bsize, /* balloc */FALSE,
 	            /* usize */0, nsets, cache_char2policy(c), selective_il1_access_fn, /* hit latency */1);
 	  	}
 	  	// selective cache end

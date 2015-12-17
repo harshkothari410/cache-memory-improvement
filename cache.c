@@ -347,14 +347,17 @@ cache_create(char *name,		/* name of the cache */
    		cp->invalidations = 0;
 
    		// initialize victim cache parameter
+         // Author : Harsh Kothari
    		cp->vc_misses = 0;
    		cp->vc_hits = 0;
 
    		// initialize miss cache parameter
+         // Author : Harsh Kothari
    		cp->mc_misses = 0;
    		cp->mc_hits = 0;
 
    		// initialize selective cache parameter
+         // Author : Harsh Kothari
    		cp->sel_hits = 0;
    		cp->sel_hits = 0;
 
@@ -836,6 +839,7 @@ cache_probe(struct cache_t *cp,		/* cache instance to probe */
 
 
 // Added getter function to get hit
+   // Author : Harsh Kothari
 int get_hit(struct cache_t *cp,	md_addr_t addr){
 	struct cache_blk_t *blk;
 	md_addr_t tag = CACHE_TAG(cp, addr);
@@ -875,6 +879,7 @@ int get_hit(struct cache_t *cp,	md_addr_t addr){
 
 
 // Added getter function to get sticky
+// Author : Harsh Kothari
 int get_sticky(struct cache_t *cp,	md_addr_t addr){
 	struct cache_blk_t *blk;
 	md_addr_t tag = CACHE_TAG(cp, addr);
@@ -914,6 +919,7 @@ int get_sticky(struct cache_t *cp,	md_addr_t addr){
 
 
 // selective sticky setter function
+// Author : Harsh Kothari
 void set_sticky(struct cache_t *cp,	md_addr_t addr, int val){
 	struct cache_blk_t *blk;
 	md_addr_t tag = CACHE_TAG(cp, addr);
@@ -953,6 +959,7 @@ void set_sticky(struct cache_t *cp,	md_addr_t addr, int val){
 
 
 // selective hit setter function
+// Author : Harsh Kothari
 void set_hit(struct cache_t *cp,	md_addr_t addr, int val){
 	struct cache_blk_t *blk;
 	md_addr_t tag = CACHE_TAG(cp, addr);
